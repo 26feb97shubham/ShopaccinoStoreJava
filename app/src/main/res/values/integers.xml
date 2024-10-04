@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="slide_bottom_animation_duration">500</integer>
+    <integer name="slide_animation_duration">500</integer>
+    <integer name="shimmer_animation_duration">1000</integer>
+</resources>
