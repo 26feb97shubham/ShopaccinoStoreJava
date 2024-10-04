@@ -1,0 +1,59 @@
+<resources>
+    <string name="categories">Categories</string>
+    <string name="view_similar_text">View Similar</string>
+    <string name="err_msg_email">Please enter your registered email address</string>
+    <string name="err_msg_password">Please enter your registered password</string>
+    <string name="err_msg_city_list">Please select a city</string>
+    <string name="err_msg_city">Please enter city</string>
+    <string name="err_msg_country">Please select a country</string>
+    <string name="err_msg_field">Input field can not be empty</string>
+    <string name="err_msg_fname">Please enter first name</string>
+    <string name="err_msg_lname">Please enter last name</string>
+    <string name="err_msg_mobile">Please enter mobile number</string>
+    <string name="err_msg_type">Please select address type</string>
+    <string name="err_msg_address">Please enter address</string>
+    <string name="err_msg_dob">Please enter date of birth</string>
+    <string name="err_msg_state_list">Please select a state</string>
+    <string name="err_msg_state">Please enter state</string>
+    <string name="err_msg_postcode">Please enter postal code</string>
+
+    <string name="err_bank_name">Please enter bank name</string>
+    <string name="err_bank_account">Please enter bank account no.</string>
+    <string name="err_bank_account_holder">Please enter account holder name</string>
+    <string name="err_bank_ifsc">Please enter IFSC code</string>
+    <string name="err_msg_gender">Please select gender</string>
+    <string name="err_msg_remail">Please enter your email</string>
+    <string name="err_msg_rpass">Please enter password.</string>
+
+    <string name="hint_fname">First Name</string>
+    <string name="hint_lname">Last Name</string>
+    <string name="hint_company">Company Name</string>
+    <string name="hint_gstin">GSTIN</string>
+    <string name="hint_mobile">Mobile</string>
+    <string name="hint_type">Address Type</string>
+    <string name="hint_address">Address</string>
+    <string name="hint_country">Country</string>
+    <string name="hint_state">State</string>
+    <string name="hint_city">City</string>
+    <string name="hint_postcode">Postal Code</string>
+    <string name="hint_gender">Gender</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+
+    <string name="delivery_date_time_selection_text"><![CDATA[Preferred Delivery Date & Time Slot]]></string>
+    <string name="delivery_date_text">Delivery Date : </string>
+    <string name="preferred_time_text">Preferred Time Slot</string>
+    <string name="change_delivery_date_text">Change Date</string>
+    <string name="personal_details_text">Personal Details</string>
+    <string name="banking_details_text">Bank Details</string>
+
+    <string name="hint_bank_name">Bank Name</string>
+    <string name="hint_bank_account_no">Bank A/c Number</string>
+    <string name="hint_ifsc_code">Bank Branch IFSC Code</string>
+    <string name="hint_account_holder">Account Holder Name</string>
+    <string name="hint_date_of_birth">Date of Birth</string>
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <string name="msg_token_fmt" translatable="false">FCM registration Token: %s</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

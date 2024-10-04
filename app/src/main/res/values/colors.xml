@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorInactive">#999999</color>
+    <color name="windowBackground">#FAFAFA</color>
+    <color name="colorWhite">#ffffff</color>
+
+
+    <color name="colorHint">#999999</color>
+    <color name="textColorPrimary">#000000</color>
+    <color name="textColorSecondary">#757575</color>
+    <color name="colorDivider">#d0d0d0</color>
+    <color name="colorGreen">#388E3C</color>
+    <color name="colorRed">#e22929</color>
+    <color name="bgLabelColor">#33000000</color>
+    <color name="shimmerColor">#24ffffff</color>
+    <color name="itemBackground">#313131</color>
+    <color name="linkColor">#3C7AFC</color>
+    <color name="colorReviewBackground">#f1f1f1</color>
+
+    <color name="list_even">#AAAAAA</color>
+    <color name="list_odd">#E1E2E2</color>
+    <color name="list_selected">#455FB6</color>
+    <color name="list_header">#99979C</color>
+
+    <color name="kprogresshud_default_color">#b1000000</color>
+    <color name="kprogresshud_grey_color">#449E9E9E</color>
+
+    <color name="coupon_layout_background">#C02B27</color>
+    <color name="coupon_timer_background">#000000</color>
+
+    <color name="referral_whatsapp_color">#2EB742</color>
+    <color name="dash_color">#303E40</color>
+
+    <color name="coupon_bg">#e5f5f2</color>
+    <color name="black">#000000</color>
+
+</resources>

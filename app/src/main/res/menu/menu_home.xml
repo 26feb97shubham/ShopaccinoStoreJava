@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.HomeActivity">
+
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/outline_search_white_24"
+        android:title="Search"
+        android:orderInCategory="1"
+        app:showAsAction="always" />
+<!--    <item-->
+<!--        android:id="@+id/action_notification"-->
+<!--        android:icon="@drawable/outline_notifications_white_24"-->
+<!--        android:title="Notification"-->
+<!--        android:orderInCategory="2"-->
+<!--        app:showAsAction="always" />-->
+    <item
+        android:id="@+id/action_wishlist"
+        android:icon="@drawable/ic_wishlist_white"
+        android:title="Wishlist"
+        android:orderInCategory="3"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_cart"
+        android:icon="@drawable/ic_cart_white"
+        android:title="Cart"
+        android:orderInCategory="4"
+        app:showAsAction="always" />
+</menu>

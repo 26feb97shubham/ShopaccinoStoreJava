@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".activity.HomeActivity">
+
+    <!-- <com.google.android.material.appbar.AppBarLayout
+         android:id="@+id/mainAppBarLayout"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:background="?attr/colorPrimary"
+         android:fitsSystemWindows="true"
+         android:theme="@style/AppTheme.AppBarOverlay"
+         app:elevation="@dimen/padding0">
+
+         <com.google.android.material.appbar.MaterialToolbar
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="?attr/colorPrimary"
+             app:layout_scrollFlags="enterAlways"
+             app:popupTheme="@style/AppTheme.PopupOverlay">
+
+             <androidx.constraintlayout.widget.ConstraintLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="?attr/actionBarSize">
+
+                 <com.google.android.material.imageview.ShapeableImageView
+                     android:id="@+id/toolbar_image"
+                     android:layout_width="100dp"
+                     android:layout_height="?attr/actionBarSize"
+                     android:paddingTop="@dimen/padding4"
+                     android:paddingBottom="@dimen/padding4"
+                     android:scaleType="fitCenter"
+                     android:src="@drawable/outline_close_24"
+                     app:layout_constraintStart_toStartOf="parent"
+                     app:layout_constraintTop_toTopOf="parent" />
+
+                 <com.google.android.material.textview.MaterialTextView
+                     android:id="@+id/spinner_currency"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_centerVertical="true"
+                     android:layout_marginEnd="8dp"
+                     android:background="@drawable/bg_rounded_stroke_white"
+                     android:drawableEnd="@drawable/outline_keyboard_arrow_down_black_18"
+                     android:drawableTint="#ffffff"
+                     android:focusable="false"
+                     android:focusableInTouchMode="false"
+                     android:inputType="none"
+                     android:paddingLeft="@dimen/padding10"
+                     android:paddingTop="@dimen/padding4"
+                     android:paddingRight="@dimen/padding10"
+                     android:paddingBottom="@dimen/padding4"
+                     android:text="INR"
+                     android:textColor="#ffffff"
+                     android:textSize="@dimen/font14"
+                     android:textStyle="bold"
+                     app:layout_constraintBottom_toBottomOf="parent"
+                     app:layout_constraintEnd_toEndOf="parent"
+                     app:layout_constraintTop_toTopOf="parent" />
+
+
+             </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+         </com.google.android.material.appbar.MaterialToolbar>
+
+     </com.google.android.material.appbar.AppBarLayout>-->
+
+    <FrameLayout
+        android:id="@+id/container_frame"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom_navigation_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:paddingVertical="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/bgLabelColor"
+            app:dividerColor="@color/bgLabelColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_home_page"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/outline_home_24"
+            app:layout_constraintEnd_toStartOf="@id/iv_categories"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            app:layout_constraintEnd_toEndOf="@id/iv_home_page"
+            app:layout_constraintStart_toStartOf="@id/iv_home_page"
+            app:layout_constraintTop_toBottomOf="@id/iv_home_page" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_categories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/outline_widgets_black_24"
+            app:layout_constraintEnd_toStartOf="@id/iv_order"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toEndOf="@id/iv_home_page"
+            app:layout_constraintTop_toBottomOf="@id/divider" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Categories"
+            app:layout_constraintEnd_toEndOf="@id/iv_categories"
+            app:layout_constraintStart_toStartOf="@id/iv_categories"
+            app:layout_constraintTop_toBottomOf="@id/iv_categories" />
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/outline_replay_black_24"
+            app:layout_constraintEnd_toStartOf="@id/iv_account"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toEndOf="@id/iv_categories"
+            app:layout_constraintTop_toBottomOf="@id/divider" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order"
+            app:layout_constraintEnd_toEndOf="@id/iv_order"
+            app:layout_constraintStart_toStartOf="@id/iv_order"
+            app:layout_constraintTop_toBottomOf="@id/iv_order" />
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/outline_account_circle_black_24"
+            app:layout_constraintEnd_toStartOf="@id/iv_menu"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toEndOf="@id/iv_order"
+            app:layout_constraintTop_toBottomOf="@id/divider" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Account"
+            app:layout_constraintEnd_toEndOf="@id/iv_account"
+            app:layout_constraintStart_toStartOf="@id/iv_account"
+            app:layout_constraintTop_toBottomOf="@id/iv_account" />
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/outline_home_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toEndOf="@id/iv_account"
+            app:layout_constraintTop_toBottomOf="@id/divider" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Menu"
+            app:layout_constraintEnd_toEndOf="@id/iv_menu"
+            app:layout_constraintStart_toStartOf="@id/iv_menu"
+            app:layout_constraintTop_toBottomOf="@id/iv_menu" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
