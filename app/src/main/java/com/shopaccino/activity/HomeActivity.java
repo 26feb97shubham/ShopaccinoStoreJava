@@ -1,5 +1,6 @@
 package com.shopaccino.activity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 
@@ -19,10 +20,16 @@ import com.shopaccino.fragments.CategoriesFragment;
 import com.shopaccino.fragments.HomeFragment;
 import com.shopaccino.fragments.MenuFragment;
 import com.shopaccino.fragments.OrderFragment;
+import com.shopaccino.helper.SQLiteHandler;
+import com.shopaccino.sessionmanager.SessionManager;
 import com.shopaccino.utils.SafeClickListener;
 
 public class HomeActivity extends AppCompatActivity {
+    private static final String TAG = HomeActivity.class.getSimpleName();
+    private Context mContext;
+    private SessionManager session;
     private ActivityHomeBinding activityHomeBinding;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

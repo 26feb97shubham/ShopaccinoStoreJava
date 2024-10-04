@@ -26,6 +26,8 @@ import org.json.JSONObject;
 public class HomeFragment extends Fragment {
     private FragmentHomeBinding fragmentHomeBinding;
 
+    private final JsonArray homePageJsonArray = new JsonArray();
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -42,7 +44,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void callApi() {
-        JSONObject params = AppConfig.getDefaultJsonObject();
+        JSONObject params = AppConfig.getDefaultJsonObject(requireContext());
         try {
             params.put("slideshows", "true");
             params.put("featured_categories", "true");
@@ -153,7 +155,6 @@ public class HomeFragment extends Fragment {
                                                     break;
                                                 }
 
-
                                                 case "image_with_text_overlay": {
                                                     // Get the itemConfig JSON object
                                                     JsonObject itemConfig = jsonObj1.getAsJsonObject("item_config");
@@ -216,7 +217,6 @@ public class HomeFragment extends Fragment {
                                                     break;
                                                 }
 
-
                                                 case "featured_products": {
                                                     JsonArray itemsJsonArray = jsonObj1.getAsJsonArray("items");
                                                     JsonObject itemConfigJsonObject = jsonObj1.getAsJsonObject("item_config");
@@ -226,7 +226,7 @@ public class HomeFragment extends Fragment {
                                                     homeJsonObject.addProperty("is_vertical", isVertical);
 
                                                     // Check if itemsJsonArray is not empty
-                                                    if (itemsJsonArray.size() > 0) {
+                                                    if (!itemsJsonArray.isEmpty()) {
                                                         JsonArray featuredProductsJsonArray = new JsonArray();
 
                                                         // Iterate through itemsJsonArray
@@ -316,9 +316,31 @@ public class HomeFragment extends Fragment {
                                                 }
 
                                                 default: {
+                                                    // Get the items array from jsonObj1
+                                                    JsonArray itemsJsonArray = jsonObj1.getAsJsonArray("items");
+                                                    JsonArray testimonialJsonArray = new JsonArray();
+                                                    if (!itemsJsonArray.isEmpty()) {
+                                                        for (int index = 0; index < itemsJsonArray.size(); index++) {
+                                                            JsonElement itemJsonElement = itemsJsonArray.get(index);
+                                                            JsonObject itemJsonObject = itemJsonElement.getAsJsonObject();
+                                                            JsonObject testimonialJsonObject = new JsonObject();
+
+                                                            // Add properties to galleryJsonObject
+                                                            testimonialJsonObject.addProperty("customer_name", itemJsonObject.get("customer_name").getAsString());
+                                                            testimonialJsonObject.addProperty("comments", itemJsonObject.get("comments").getAsString());
+                                                            testimonialJsonObject.addProperty("thumb_image_url", itemJsonObject.get("thumb_image_url").getAsString());
+
+                                                            // Add to testimonialJsonArray
+                                                            testimonialJsonArray.add(testimonialJsonObject);
+                                                        }
+                                                        // Add the testimonialJsonArray to homeJsonObject
+                                                        homeJsonObject.add("items", testimonialJsonArray);
+                                                    }
                                                     break;
                                                 }
                                             }
+
+                                            homePageJsonArray.add(homeJsonObject);
                                         });
                                     }
                                 }
