@@ -1,6 +1,16 @@
 package com.shopaccino.config;
 
+import android.content.Context;
+
+import com.shopaccino.helper.SQLiteHandler;
+import com.shopaccino.helper.StoreConfig;
+import com.shopaccino.sessionmanager.SessionManager;
+
 import org.json.JSONObject;
+
+import java.math.BigInteger;
+import java.security.SecureRandom;
+import java.util.HashMap;
 
 public class AppConfig {
     public static final String BASE_URL = "https://rome.shopaccino.net/";
@@ -110,20 +120,35 @@ public class AppConfig {
     public static String PAYMENT_RESPONSE = "store_payment_modes/rest_payment_response.json";
     public static String GET_WISHLIST_ITEMS = "store_products/rest_get_wishlist.json";
 
+    public static String nextSessionId() {
+        SecureRandom random = new SecureRandom();
+        return new BigInteger(160, random).toString(32);
+    }
 
-    public static JSONObject getDefaultJsonObject() {
+
+    public static JSONObject getDefaultJsonObject(Context mContext) {
+        SessionManager session = new SessionManager(mContext, StoreConfig.getSessionName());
+        SQLiteHandler db = new SQLiteHandler(mContext, StoreConfig.getDbName());
+        String customerId = "0";
+        if (session.isLoggedIn()) {
+            HashMap<String, String> user = db.getUserDetails();
+            customerId = user.get("customerId");
+        }
+        if (session.getCartSessionId().isEmpty()) {
+            session.setCartSessionId(nextSessionId());
+        }
         JSONObject jsonObject = new JSONObject();
         try {
-            jsonObject.put("session_id", "");
-            jsonObject.put("customer_id", "");
-            jsonObject.put("store_address_id", "");
-            jsonObject.put("store_address_city_id", "");
-            jsonObject.put("store_address_city_name", "");
-            jsonObject.put("store_address_pincode", "");
-            jsonObject.put("order_id", "");
-            jsonObject.put("currency_id", "1");
-            jsonObject.put("language_id", "1");
-            jsonObject.put("google_device_id", "");
+            jsonObject.put("session_id", session.getCartSessionId());
+            jsonObject.put("customer_id", customerId);
+            jsonObject.put("store_address_id", session.getStoreAddressId());
+            jsonObject.put("store_address_city_id", session.getStoreAddressCityId());
+            jsonObject.put("store_address_city_name", session.getStoreAddressCityName());
+            jsonObject.put("store_address_pincode", session.getStoreAddressPincode());
+            jsonObject.put("currency_id", session.getCurrencyId());
+            jsonObject.put("order_id", session.getCartOrderId());
+            jsonObject.put("language_id", session.getLanguageId());
+            jsonObject.put("google_device_id", session.getFCMToken());
         } catch (Exception exception) {
             exception.printStackTrace();
         }

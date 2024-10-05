@@ -2,8 +2,10 @@ package com.shopaccino.utils;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.Resources;
 import android.os.Build;
 import android.util.DisplayMetrics;
+import android.util.TypedValue;
 import android.view.WindowInsets;
 import android.view.WindowManager;
 import android.view.WindowMetrics;
@@ -24,5 +26,10 @@ public class Utility {
             windowManager.getDefaultDisplay().getMetrics(displayMetrics);
             return displayMetrics.widthPixels;
         }
+    }
+
+    public static int dpToPx(Context context, int dp) {
+        Resources r = context.getResources();
+        return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
     }
 }
