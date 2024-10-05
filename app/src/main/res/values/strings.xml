@@ -56,4 +56,15 @@
     <string name="msg_token_fmt" translatable="false">FCM registration Token: %s</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="apply_coupon">Apply Coupon</string>
+    <string name="your_cart_200">Your Cart: 200</string>
+    <string name="enter_coupon_code_hint">Enter Coupon Code</string>
+    <string name="apply">Apply</string>
+    <string name="more_offers">More Offers</string>
+    <string name="coupon_title">Coupon Title</string>
+    <string name="t_n_c"><u>Terms &amp; Conditions</u></string>
+    <string name="use_coupon_code">Use Coupon Code:</string>
+    <string name="expiry_date">Expiry Date:</string>
+    <string name="redeem_now">Redeem Now</string>
 </resources>

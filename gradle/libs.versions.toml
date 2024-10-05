@@ -9,6 +9,10 @@ activity = "1.9.2"
 constraintlayout = "2.1.4"
 volley = "1.2.1"
 gsonVersion = "2.10.1"
+sdpAndroid = "1.1.1"
+sspAndroid = "1.1.1"
+kotlinStdlibJdk7 = "1.9.20"
+konfetti = "2.0.4"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -21,6 +25,12 @@ constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayo
 
 volley = { group = "com.android.volley", name = "volley", version.ref = "volley" }
 google-gson = { group = "com.google.code.gson", name = "gson", version.ref = "gsonVersion" }
+
+sdp-android = { module = "com.intuit.sdp:sdp-android", version.ref = "sdpAndroid" }
+ssp-android = { module = "com.intuit.ssp:ssp-android", version.ref = "sspAndroid" }
+
+konfetti = { module = "nl.dionsegijn:konfetti-xml", version.ref = "konfetti" }
+kotlin-stdlib-jdk7 = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk7", version.ref = "kotlinStdlibJdk7" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

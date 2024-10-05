@@ -5,4 +5,9 @@
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
 
+    <style name="CustomDialogTheme" parent="Theme.AppCompat.Dialog">
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.5</item> <!-- Adjust dim amount -->
+    </style>
+
 </resources>

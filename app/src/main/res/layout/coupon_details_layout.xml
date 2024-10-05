@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#abb2b9">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/coupon_bg"
+        android:layout_margin="@dimen/_10sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_app_logo"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_coupon_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="@string/coupon_title"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_11ssp"
+        app:layout_constraintBottom_toTopOf="@id/tv_coupon_desc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_app_logo"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_coupon_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:gravity="center"
+        android:padding="@dimen/_2sdp"
+        android:text="A deal you can't resist. Dive into our exclusive offer and enjoy this discount during checkout by using the code EXTRA10"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_11ssp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_coupon_title"
+        tools:ignore="HardcodedText" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_25sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_coupon_desc"/>
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_use_coupon_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:maxLines="1"
+        android:text="@string/use_coupon_code"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_25sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider"
+        android:textColor="#848884"
+        android:textSize="@dimen/_11ssp" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_coupon_code"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_40sdp"
+        android:gravity="center"
+        android:maxLength="15"
+        android:padding="@dimen/_5sdp"
+        android:text="coupon code"
+        android:textAllCaps="true"
+        android:textColor="#abb2b9"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:textSize="@dimen/_20ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_semi_circle_left"
+        app:layout_constraintEnd_toStartOf="@id/iv_semi_circle_right"
+        app:layout_constraintTop_toBottomOf="@id/tv_use_coupon_code"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText" />
+
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_semi_circle_left"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        app:layout_constraintTop_toTopOf="@id/tv_coupon_code"
+        app:layout_constraintBottom_toBottomOf="@id/tv_coupon_code"
+        android:layout_marginStart="@dimen/_minus20sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="#abb2b9"
+        android:src="@drawable/semi_circle_top"/>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_semi_circle_right"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        app:layout_constraintTop_toTopOf="@id/tv_coupon_code"
+        app:layout_constraintBottom_toBottomOf="@id/tv_coupon_code"
+        android:layout_marginEnd="@dimen/_minus20sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="#abb2b9"
+        android:src="@drawable/semi_circle_top"/>
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/btn_apply"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/coupon_apply_button_full_rounded"
+        android:elevation="0dp"
+        android:gravity="center"
+        android:padding="@dimen/_8sdp"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:text="@string/redeem_now"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_15ssp"
+        app:elevation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_coupon_code"/>
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_valid_till"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:maxLines="1"
+            android:text="@string/use_coupon_code"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_25sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_apply"
+            android:textColor="#848884"
+            android:textSize="@dimen/_11ssp" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_30sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_valid_till"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

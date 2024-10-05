@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_90sdp"
+    android:layout_marginBottom="@dimen/_10sdp"
+    android:background="@drawable/coupon_bg"
+    android:orientation="horizontal">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/coupon_code_cl"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/_8sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/divider"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_coupon_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/coupon_title"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintBottom_toTopOf="@id/coupon_code_apply_cl"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_coupon"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:src="@drawable/coupon"
+            app:layout_constraintBottom_toBottomOf="@id/coupon_code_apply_cl"
+            app:layout_constraintStart_toStartOf="@id/tv_coupon_title"
+            app:layout_constraintTop_toTopOf="@id/coupon_code_apply_cl" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/coupon_code_apply_cl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/dotted_rectangle"
+            app:layout_constraintBottom_toTopOf="@id/tv_terms_n_conditions"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_coupon"
+            app:layout_constraintTop_toBottomOf="@id/tv_coupon_title"
+            app:layout_constraintVertical_chainStyle="packed">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_coupon_code"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:maxLength="15"
+                android:padding="@dimen/_5sdp"
+                android:text="coupon code"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btn_apply"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/btn_apply"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:background="@drawable/coupon_apply_button_bg"
+                android:elevation="0dp"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_8sdp"
+                android:text="@string/apply"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_9ssp"
+                app:elevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_terms_n_conditions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/t_n_c"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/coupon_code_apply_cl"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include
+        android:id="@+id/divider"
+        layout="@layout/divider_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/coupon_code_cl"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:weightSum="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toEndOf="@id/divider"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Extra"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintStart_toEndOf="@id/iv_coupon"
+            app:layout_constraintTop_toBottomOf="@id/tv_coupon_title"
+            tools:ignore="HardcodedText" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_coupon_discount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:gravity="center"
+            android:text="10.00 %"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16ssp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/iv_coupon"
+            app:layout_constraintTop_toBottomOf="@id/tv_coupon_title"
+            tools:ignore="HardcodedText" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="OFF"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintStart_toEndOf="@id/iv_coupon"
+            app:layout_constraintTop_toBottomOf="@id/tv_coupon_title"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

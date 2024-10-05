@@ -3,6 +3,7 @@
     <color name="colorInactive">#999999</color>
     <color name="windowBackground">#FAFAFA</color>
     <color name="colorWhite">#ffffff</color>
+    <color name="white">#ffffff</color>
 
 
     <color name="colorHint">#999999</color>
@@ -34,4 +35,9 @@
     <color name="coupon_bg">#e5f5f2</color>
     <color name="black">#000000</color>
 
+
+    <color name="bg_color">#f6f5ed</color>
+    <color name="semi_circle_color">#F44336</color>
+    <color name="apply_tv_color">#C0C0C0</color>
+    <color name="dialog_dim_bg">#33000000</color>
 </resources>
